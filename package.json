@@ -30,6 +30,8 @@
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
     "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-hot-loader": "^4.2.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
