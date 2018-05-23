@@ -4,7 +4,6 @@ import './progress.less'
 class Progress extends React.Component{
     constructor(props){
         super(props)
-        //this.barColor = '#2f9842'
         this.progressBar = null
         this.progressRef = ele => {
             this.progressBar = ele

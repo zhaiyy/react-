@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from './components/header'
 import Player from './page/palyer'
+import MusicList from './page/musicList'
 import {MUSIC_LIST} from './config/config'
 
 
@@ -8,7 +9,8 @@ class Root extends React.Component{
     constructor(props) {
         super(props)
         this.state = {
-            currentMusicItem:MUSIC_LIST[0]
+            currentMusicItem:MUSIC_LIST[2],
+            musicList:MUSIC_LIST
 
         }
     };
@@ -28,7 +30,11 @@ class Root extends React.Component{
         return (
             <div>
                 <Header></Header>
+{/*
                 <Player currentMusicItem={this.state.currentMusicItem}></Player>
+*/}
+                <MusicList currentMusicItem={this.state.currentMusicItem}
+                    musicList={this.state.musicList}></MusicList>
             </div>
         );
     }
