@@ -2,6 +2,7 @@ import React from 'react'
 import Header from './components/header'
 import Progress from './components/progress'
 
+let duration = null
 class Root extends React.Component{
     constructor(props) {
         console.log(props)
@@ -20,6 +21,7 @@ class Root extends React.Component{
             useStateClassSkin: true
         });
         $("#player").bind($.jPlayer.event.timeupdate, (e) => {
+            duration = e.jPlayer.status.duration
             this.setState({
                 progress: e.jPlayer.status.currentPercentAbsolute
             });
@@ -28,11 +30,14 @@ class Root extends React.Component{
     componentWillUnmount() {
         $("#player").unbind($.jPlayer.event.timeupdate);
     };
+    onProgressChangeHandler(progress){
+        $("#player").jPlayer('player',duration*progress);
+    };
     render(){
         return (
             <div>
                 <Header></Header>
-                <Progress progress={this.state.progress}></Progress>
+                <Progress progress={this.state.progress} onProgressChange={this.onProgressChangeHandler}></Progress>
             </div>
         );
     }
