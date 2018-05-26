@@ -9,9 +9,10 @@ class musicList extends React.Component{
     };
     render(){
         let listEle = null
-        listEle = this.props.musicList.map((item)=> {
+        const {musicList = [],currentMusicItem={}} = this.props
+        listEle = musicList.map((item)=> {
             return <MusicListItem
-                focus={item == this.props.currentMusicItem}
+                focus={item == currentMusicItem}
                 key={item.id} musicItem = {item}>
                 {item.title}
                 </MusicListItem>

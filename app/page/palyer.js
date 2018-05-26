@@ -44,13 +44,14 @@ class Player extends React.Component{
         })
     }
     render(){
+        const {currentMusicItem: {title = '', artist = '', cover = ''} = {}} = this.props;
         return (
             <div className="player-page">
                 <h1 className="caption">我的私人音乐坊 &gt;</h1>
                 <div className="mt20 row">
                     <div className="controll-wrapper">
-                        <h2 className="music-title">{this.props.currentMusicItem.title}</h2>
-                        <h3 className="music-artist mt10">{this.props.currentMusicItem.artist}</h3>
+                        <h2 className="music-title">{title}</h2>
+                        <h3 className="music-artist mt10">{artist}</h3>
                         <div className="row mt20">
                             <div className="left-time -col-auto">-leftTime</div>
                             <div className="volume-container">
@@ -85,7 +86,7 @@ class Player extends React.Component{
                         </div>
                     </div>
                     <div className="-col-auto cover">
-                        <img src={this.props.currentMusicItem.cover} alt={this.props.currentMusicItem.title}/>
+                        <img src={cover} alt={title}/>
                     </div>
                 </div>
             </div>
