@@ -7,6 +7,7 @@ let duration = null
 class Player extends React.Component{
     constructor(props) {
         super(props)
+        console.log(this)
         this.state = {
             progress: 0,
             isPlay: true,

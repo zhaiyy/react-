@@ -25,9 +25,6 @@ class App  extends React.Component{
         });
     };
     render(){
-        console.log(this.props.children)
-        console.log(this.state)
-        console.log(React.cloneElement(this.props.children,this.state))
         const childrenWithProps = React.Children.map(this.props.children, child => React.cloneElement(child,
             {
                 currentMusicItem: this.state.currentMusicItem,
